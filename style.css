@@ -1,0 +1,606 @@
+
+/* GENERAL STYLING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #263238;
+    line-height: 1.6;
+    background: #ffffff;
+}
+
+:root {
+    --dark: #101820;
+    --yellow: #ffd43b;
+    --light: #f4f6f9;
+    --grey: #667085;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+section {
+    scroll-margin-top: 85px;
+}
+
+/* NAVIGATION */
+header {
+    background: var(--dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    min-height: 75px;
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--yellow);
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--yellow);
+}
+
+.btn {
+    display: inline-block;
+    padding: 11px 23px;
+    border: 2px solid var(--yellow);
+    border-radius: 6px;
+    background: var(--yellow);
+    color: #151515;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--yellow);
+}
+
+.btn-outline {
+    margin-left: 8px;
+    border-color: white;
+    color: white;
+    background: transparent;
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    padding: 60px 7%;
+    color: white;
+
+    background:
+        linear-gradient(90deg, #101820 5%, #101820d9 48%, #10182045),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tagline, .subtitle {
+    color: #c39200;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.hero .tagline {
+    color: var(--yellow);
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 62px);
+    line-height: 1.15;
+    margin: 18px 0;
+}
+
+.hero h1 span,
+.heading h2 span,
+.about h2 span {
+    color: #e4b400;
+}
+
+.hero-content > p:not(.tagline) {
+    color: #e2e6eb;
+    margin-bottom: 25px;
+    max-width: 520px;
+}
+
+/* FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    background: var(--dark);
+    color: white;
+    padding: 30px 5%;
+}
+
+.feature {
+    padding: 10px;
+}
+
+.feature h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.feature p {
+    color: #bdc6d0;
+    font-size: 13px;
+}
+
+/* COMMON SECTIONS */
+.section {
+    padding: 75px 5%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.heading h2 {
+    color: var(--dark);
+    font-size: clamp(28px, 4vw, 38px);
+    margin: 8px 0;
+}
+
+.heading > p:last-child {
+    color: var(--grey);
+}
+
+/* WORKOUT CARDS */
+.card-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e2e7ee;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #0000000c;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px #00000018;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 215px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 22px;
+}
+
+.card h3,
+.health-card h3 {
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: var(--grey);
+    margin-bottom: 15px;
+}
+
+.card-content .info {
+    color: #9b7600;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.small-btn {
+    display: inline-block;
+    background: var(--yellow);
+    color: #171717;
+    padding: 9px 17px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.small-btn:hover {
+    background: var(--dark);
+    color: white;
+}
+
+/* FITNESS PROGRAMS */
+.programs,
+.health,
+.contact {
+    background: var(--light);
+}
+
+.program-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.program {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e3e7ed;
+    transition: 0.3s;
+}
+
+.program:hover {
+    transform: translateY(-4px);
+    border-color: var(--yellow);
+}
+
+.program-icon {
+    min-width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: #fff1b0;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+}
+
+.program h3 {
+    margin-bottom: 6px;
+}
+
+.program p {
+    font-size: 14px;
+    color: var(--grey);
+}
+
+/* MEMBERSHIP */
+.price-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.price-card {
+    position: relative;
+    border: 1px solid #e0e5eb;
+    padding: 32px 25px;
+    border-radius: 12px;
+    background: white;
+    transition: 0.3s;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px #00000012;
+}
+
+.price-card h3 {
+    font-size: 23px;
+}
+
+.price-card h2 {
+    font-size: 30px;
+    color: #b48a00;
+    margin: 15px 0;
+}
+
+.price-card h2 span {
+    font-size: 13px;
+    color: var(--grey);
+    font-weight: normal;
+}
+
+.price-card > p:not(.popular-tag) {
+    color: var(--grey);
+    font-size: 14px;
+}
+
+.price-card ul {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.price-card li {
+    padding: 9px 0;
+    border-bottom: 1px solid #edf0f4;
+    font-size: 14px;
+}
+
+.price-card li::before {
+    content: "✓ ";
+    color: #b48a00;
+    font-weight: bold;
+}
+
+.price-card .small-btn {
+    display: block;
+    text-align: center;
+}
+
+.price-card.popular {
+    border: 2px solid #e4b400;
+    background: #fffcf0;
+}
+
+.popular-tag {
+    background: var(--yellow);
+    color: #171717;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* HEALTH TIPS */
+.health-card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 12px;
+    border: 1px solid #e2e7ee;
+    transition: 0.3s;
+}
+
+.health-card:hover {
+    transform: translateY(-5px);
+}
+
+.health-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.health-card p {
+    color: var(--grey);
+    font-size: 14px;
+}
+
+/* ABOUT */
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.about-content h2 {
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: 1.25;
+    margin: 15px 0;
+}
+
+.about-content > p:not(.subtitle) {
+    color: var(--grey);
+    margin-bottom: 25px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* CONTACT FORM */
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border: 1px solid #e2e7ee;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #00000008;
+}
+
+.contact-form label {
+    display: block;
+    margin: 15px 0 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.contact-form input,
+.contact-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5dce5;
+    border-radius: 6px;
+    font: inherit;
+    background: white;
+}
+
+.contact-form input:focus,
+.contact-form select:focus {
+    outline: 2px solid #ffe17b;
+    border-color: #c49a13;
+}
+
+.contact-form button {
+    width: 100%;
+    margin-top: 22px;
+    font-size: 15px;
+}
+
+/* FOOTER */
+footer {
+    background: #0b1117;
+    color: white;
+    padding: 45px 5% 20px;
+}
+
+.footer-content {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 35px;
+    padding-bottom: 30px;
+}
+
+.footer-content h3 {
+    margin-bottom: 12px;
+    color: var(--yellow);
+}
+
+.footer-content p,
+.footer-content a {
+    color: #bdc6d0;
+    font-size: 13px;
+}
+
+.footer-content a {
+    display: block;
+    margin: 8px 0;
+}
+
+.footer-content a:hover {
+    color: var(--yellow);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #29313a;
+    padding-top: 20px;
+    color: #bdc6d0;
+    font-size: 13px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 950px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-container,
+    .price-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav a {
+        padding: 5px;
+    }
+
+    .hero {
+        min-height: 460px;
+        padding: 45px 6%;
+        background-position: 60% center;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .features,
+    .card-container,
+    .program-container,
+    .price-container,
+    .about,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 55px 6%;
+    }
+
+    .card img {
+        height: 230px;
+    }
+
+    .about-image img {
+        height: 260px;
+    }
+
+    .contact-form {
+        padding: 22px;
+    }
+
+    .btn-outline {
+        margin: 10px 0 0;
+    }
+}
